@@ -24,6 +24,6 @@ You will also see any lint errors in the console.
 
 
 
-###`yarn fmt`
+### `yarn fmt`
 
 Run the `eslint` and `prettier`.
