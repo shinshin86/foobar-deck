@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { fetchPost } from '../actions/post'
-import { fetchComment } from '../actions/comment'
+import { fetchComment, deleteCommentColumn } from '../actions/comment'
 import MainView from '../components/MainView'
 
 const mapStateToProps = state => {
@@ -15,6 +15,7 @@ export default connect(
   mapStateToProps,
   {
     fetchPost,
-    fetchComment
+    fetchComment,
+    deleteCommentColumn
   }
 )(MainView)

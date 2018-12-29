@@ -47,6 +47,7 @@ export default class MainView extends React.Component {
               <CommentContent
                 {...comment}
                 fetchComment={this.props.fetchComment}
+                deleteCommentColumn={this.props.deleteCommentColumn}
                 key={listIndex}
               />
             </BoxContentWrapper>

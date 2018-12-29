@@ -53,9 +53,14 @@ export const BoxContent = post => (
   </ContainerWrapper>
 )
 
-export const CommentContent = ({ commentList, relatedPost, fetchComment }) => (
+export const CommentContent = ({
+  commentList,
+  relatedPost,
+  fetchComment,
+  deleteCommentColumn
+}) => (
   <ContainerWrapper>
-    {renderHeader(relatedPost)}
+    {renderHeader(relatedPost, deleteCommentColumn)}
     {commentList.map((comment, index) => (
       <React.Fragment key={index}>
         <ProfileWrapper>
@@ -76,13 +81,24 @@ export const CommentContent = ({ commentList, relatedPost, fetchComment }) => (
 const ContentHeader = styled.div`
   padding: 8px;
 `
+const FlexBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 
-const renderHeader = relatedPost => (
+const renderHeader = (relatedPost, deleteCommentColumn) => (
   <ContentHeader>
-    <p>
-      ID:
-      {relatedPost.id}
-    </p>
+    <FlexBox>
+      <div>
+        ID:
+        {relatedPost.id}
+      </div>
+      {deleteCommentColumn && (
+        <div onClick={() => deleteCommentColumn(relatedPost.commentColumnId)}>
+          X
+        </div>
+      )}
+    </FlexBox>
     <p>
       TITLE:
       {relatedPost.title}
