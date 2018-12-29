@@ -4,18 +4,20 @@ import { BoxContent, CommentContent } from './Content'
 
 const ContentWrapper = styled.div`
   position: absolute;
-  width: calc(100% - 50px);
+  left: 8px;
+  width: calc(100% - 16px);
   display: flex;
   height: 100%;
   overflow-y: hidden;
+  color: #9f9cc1;
+  background: #454075;
+  border-radius: 4px;
 `
 
 const BoxContentWrapper = styled.div`
-  max-width: 220px;
-  width: 100%;
   height: 100%;
-  color: #e1e8ed;
-  background: #333;
+  color: #9f9cc1;
+  background: #05022b;
   overflow-y: auto;
 `
 

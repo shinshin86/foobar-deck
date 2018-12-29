@@ -33,8 +33,11 @@ const BodyWrapper = styled.div`
 `
 
 const Title = styled.div`
-  color: #e1e8ed;
+  color: #e5e8ea;
   font-size: 1rem;
+`
+const ContentWrapper = styled.div`
+  margin-top: 88px;
 `
 
 export const BoxContent = post => (
@@ -61,25 +64,35 @@ export const CommentContent = ({
 }) => (
   <ContainerWrapper>
     {renderHeader(relatedPost, deleteCommentColumn)}
-    {commentList.map((comment, index) => (
-      <React.Fragment key={index}>
-        <ProfileWrapper>
-          <TitleWrapper>
-            {comment.id}
-            <Avater src="http://placehold.it/50x50" size="50" />
-          </TitleWrapper>
-          <Title>{comment.name}</Title>
-        </ProfileWrapper>
-        <BodyWrapper onClick={() => fetchComment(comment.postId, 'Comment')}>
-          {comment.body}
-        </BodyWrapper>
-      </React.Fragment>
-    ))}
+    <ContentWrapper>
+      {commentList.map((comment, index) => (
+        <React.Fragment key={index}>
+          <ProfileWrapper>
+            <TitleWrapper>
+              {comment.id}
+              <Avater src="http://placehold.it/50x50" size="50" />
+            </TitleWrapper>
+            <Title>{comment.name}</Title>
+          </ProfileWrapper>
+          <BodyWrapper onClick={() => fetchComment(comment.postId, 'Comment')}>
+            {comment.body}
+          </BodyWrapper>
+        </React.Fragment>
+      ))}
+    </ContentWrapper>
   </ContainerWrapper>
 )
 
 const ContentHeader = styled.div`
+  /* TODO: Header is Fix header */
+  /*position: ${props => (props.comment ? 'absolute' : 'none')};*/
+  top: 0;
+  width: 100%;
+  background: #dbdb8f;
+  color: #111;
   padding: 8px;
+  border-radius: 8px;
+  margin: 4px 8/po
 `
 const FlexBox = styled.div`
   display: flex;
@@ -87,7 +100,7 @@ const FlexBox = styled.div`
 `
 
 const renderHeader = (relatedPost, deleteCommentColumn) => (
-  <ContentHeader>
+  <ContentHeader comment={!!relatedPost.commentColumnId}>
     <FlexBox>
       <div>
         ID:
@@ -99,9 +112,9 @@ const renderHeader = (relatedPost, deleteCommentColumn) => (
         </div>
       )}
     </FlexBox>
-    <p>
+    <div>
       TITLE:
       {relatedPost.title}
-    </p>
+    </div>
   </ContentHeader>
 )
