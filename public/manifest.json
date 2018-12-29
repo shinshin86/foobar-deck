@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "foobar deck",
+  "name": "Sample APP like a TweetDeck",
   "icons": [
     {
       "src": "favicon.ico",
