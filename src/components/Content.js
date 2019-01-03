@@ -87,12 +87,11 @@ const ContentHeader = styled.div`
   /* TODO: Header is Fix header */
   /*position: ${props => (props.comment ? 'absolute' : 'none')};*/
   top: 0;
-  width: 100%;
   background: #dbdb8f;
   color: #111;
   padding: 8px;
   border-radius: 8px;
-  margin: 4px 8/po
+  margin: 4px 8px;
 `
 const FlexBox = styled.div`
   display: flex;

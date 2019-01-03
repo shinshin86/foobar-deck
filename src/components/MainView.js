@@ -19,6 +19,7 @@ const BoxContentWrapper = styled.div`
   color: #9f9cc1;
   background: #05022b;
   overflow-y: auto;
+  overflow-x: hidden;
 `
 
 export default class MainView extends React.Component {
