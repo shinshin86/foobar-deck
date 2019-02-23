@@ -15,11 +15,12 @@ const ContentWrapper = styled.div`
 `
 
 const BoxContentWrapper = styled.div`
+  width: calc(100% / 4);
   height: 100%;
   color: #9f9cc1;
   background: #05022b;
   overflow-y: auto;
-  overflow-x: hidden;
+  display: inline-block;
 `
 
 export default class MainView extends React.Component {
