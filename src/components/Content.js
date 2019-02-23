@@ -106,9 +106,14 @@ const renderHeader = (relatedPost, deleteCommentColumn) => (
         {relatedPost.id}
       </div>
       {deleteCommentColumn && (
-        <div onClick={() => deleteCommentColumn(relatedPost.commentColumnId)}>
-          X
-        </div>
+        <button
+          type="button"
+          className="close"
+          aria-label="Close"
+          onClick={() => deleteCommentColumn(relatedPost.commentColumnId)}
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
       )}
     </FlexBox>
     <div>
