@@ -3,15 +3,15 @@ import styled from 'styled-components'
 import { BoxContent, CommentContent } from './Content'
 
 const ContentWrapper = styled.div`
-  position: absolute;
-  left: 8px;
   width: calc(100% - 16px);
   display: flex;
   height: 100%;
   overflow-y: hidden;
   color: #9f9cc1;
-  background: #454075;
-  border-radius: 4px;
+  background: #454075
+  overflow-y: scroll;
+  height: 100vh;
+};
 `
 
 const BoxContentWrapper = styled.div`
@@ -21,6 +21,8 @@ const BoxContentWrapper = styled.div`
   background: #05022b;
   overflow-y: auto;
   display: inline-block;
+  border: 1px solid #dbdb8f;
+  border-radius: 4px;
 `
 
 export default class MainView extends React.Component {

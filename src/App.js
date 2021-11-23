@@ -9,7 +9,6 @@ const Container = styled.div`
   padding: 8px 16px;
   margin: 0 auto;
   background: #05022b;
-  border-radius: 4px;
 `
 const store = configureStore()
 const App = () => (
