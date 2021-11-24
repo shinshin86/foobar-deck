@@ -33,12 +33,11 @@ const Title = styled.div`
 `
 const ContentWrapper = styled.div`
   margin-top: 88px;
+  padding: 8px;
 `
 
 const CommentWrapper = styled.div`
-  padding: 8px 16px;
   margin: 0 auto;
-  overflow-y: auto;
   border-top: 1px solid #8e6cab;
   cursor: pointer;
 `
@@ -83,11 +82,12 @@ export const CommentContent = ({
 )
 
 const ContentHeader = styled.div`
-  background: #dbdb8f;
-  color: #111;
-  padding: 8px;
-  border-radius: 8px;
-  margin: 4px 8px;
+  position: sticky;
+  top: 0;
+  border: 2px solid #8e6cab;
+  background: #05022b;
+  color: #e5e8ea;
+  padding: 16px;
 `
 const FlexBox = styled.div`
   display: flex;
