@@ -6,7 +6,6 @@ const ContentWrapper = styled.div`
   width: calc(100% - 16px);
   display: flex;
   height: 100%;
-  overflow-y: hidden;
   color: #9f9cc1;
   background: #454075
   overflow-y: scroll;
@@ -25,6 +24,21 @@ const BoxContentWrapper = styled.div`
   border-radius: 4px;
 `
 
+const ContentHeader = styled.div`
+  position: sticky;
+  top: 0;
+  border: 2px solid #8e6cab;
+  background: #05022b;
+  color: #e5e8ea;
+  padding: 16px;
+`
+
+const renderHeader = () => (
+  <ContentHeader>
+    <div>First Panel</div>
+  </ContentHeader>
+)
+
 export default class MainView extends React.Component {
   componentDidMount() {
     this.props.fetchPost()
@@ -39,6 +53,7 @@ export default class MainView extends React.Component {
     return (
       <ContentWrapper>
         <BoxContentWrapper>
+          {renderHeader()}
           {post.post.map((p, index) => (
             <BoxContent
               {...p}
